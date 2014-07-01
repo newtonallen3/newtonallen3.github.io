@@ -27,7 +27,7 @@ objdump -d bin/variable_access | less
 
 ## Methods that use pointer receivers are cheaper
 
-```java
+```go
 type Vector2 struct {
     X, Y float64
 }
@@ -82,7 +82,7 @@ Curiously, two of the instructions in the inlined `ManhattanLength()` are entire
 
 ### Profiling results
 
-```python
+```go
 func main() {
 	vectors := [2]Vector3{ {1.1, 2.2, 9.9}, {1.6, 2.8, 1.3} }
 	result := 0.0
