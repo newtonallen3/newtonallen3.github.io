@@ -69,6 +69,13 @@ f20f100425a0ba4e00              REPNE MOVSD_XMM $f64.0000000000000000(SB), X0
 f20f1023                        REPNE MOVSD_XMM 0(BX), X4
 f20f104b08                      REPNE MOVSD_XMM 0x8(BX), X1
 f20f58e1                        REPNE ADDSD X1, X4
+
+// Manually inlined copy of ManhattanLength()
+// 3 instructions, 22 bytes
+f20f10a42450020000              REPNE MOVSD_XMM 0x250(SP), X4
+f20f108c2458020000              REPNE MOVSD_XMM 0x258(SP), X1
+f20f58e1                        REPNE ADDSD X1, X4
+ 
 ```
 
 Curiously, two of the instructions in the inlined `ManhattanLength()` are entirely unneeded: `MOVSD_XMM X5, 0x118(SP)` and `MOVSD_XMM X2, 0x120(SP)`. These make a copy of `vec1` on the stack, but that copy is never used since the data is already available in registers `X2` and `X5`.
