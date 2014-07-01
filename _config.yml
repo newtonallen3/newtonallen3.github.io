@@ -1,0 +1,25 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+redcarpet:
+  extensions:     ['smart', 'no_intra_emphasis', 'strikethrough', 'tables']
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Newtonius
+tagline:          It's peanut butter o'clock
+url:              http://newtonallen3.github.com
+timezone:         America/Los_Angeles
+paginate:         1
+baseurl:          /
+author:
+  name:           Newton Allen
+  url:            http://newtonallen3.github.com
+  email:          (email)
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/newtonallen3/newtonallen3.github.io
